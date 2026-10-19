@@ -1,306 +1,356 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | FYB2SYB</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FYB2SYB member login page.">
+<title>Member Login | FYB2SYB</title>
+
+<style>
+:root {
+  --green: #075b35;
+  --dark: #043d25;
+  --gold: #d8ad35;
+  --light: #f4f7f4;
+  --text: #24352b;
+  --muted: #68776e;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f1f6f2;
-  color: #24352c;
+  background: var(--light);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-  background: #075c38;
+  background: var(--green);
   color: white;
-  padding: 20px 15px;
-  text-align: center;
-  border-bottom: 4px solid #d5a52b;
+  padding: 17px 5%;
+  border-bottom: 4px solid var(--gold);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 27px;
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-header h1 span {
-  color: #f1c64f;
-}
-
-header p {
-  font-size: 13px;
-  margin-bottom: 0;
-}
-
-.home-link {
-  display: inline-block;
-  margin-top: 12px;
+.logo {
   color: white;
   text-decoration: none;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
   font-size: 14px;
 }
 
-.container {
-  max-width: 450px;
-  margin: 35px auto;
-  padding: 0 15px;
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 16px;
 }
 
 .login-card {
+  width: 100%;
+  max-width: 440px;
   background: white;
-  border-radius: 14px;
-  padding: 27px 23px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-  border-top: 5px solid #d5a52b;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #e1e8e2;
+  box-shadow: 0 8px 30px #0000000c;
 }
 
-.login-card h2 {
-  text-align: center;
-  color: #075c38;
-  margin: 0 0 8px;
-}
-
-.intro {
-  text-align: center;
-  color: #68776e;
-  font-size: 14px;
-  margin-bottom: 24px;
-}
-
-.tabs {
+.login-icon {
+  width: 78px;
+  height: 78px;
+  background: #e7f2e9;
+  border: 3px solid var(--gold);
+  border-radius: 50%;
   display: flex;
-  gap: 8px;
-  margin-bottom: 22px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 17px;
+  font-size: 34px;
 }
 
-.tab {
-  flex: 1;
-  padding: 11px 5px;
-  border: 1px solid #075c38;
-  border-radius: 6px;
-  background: white;
-  color: #075c38;
-  font-weight: bold;
-  cursor: pointer;
+h1 {
+  color: var(--green);
+  text-align: center;
+  font-size: 29px;
+  margin-bottom: 8px;
 }
 
-.tab.active {
-  background: #075c38;
-  color: white;
+.subtitle {
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 17px;
 }
 
 label {
   display: block;
   font-size: 14px;
   font-weight: bold;
-  margin: 15px 0 7px;
+  margin-bottom: 7px;
 }
 
 input {
   width: 100%;
   padding: 13px;
-  border: 1px solid #ccd7ce;
-  border-radius: 7px;
+  border: 1px solid #d5dfd7;
+  border-radius: 8px;
   font-size: 15px;
-  outline: none;
 }
 
 input:focus {
-  border-color: #075c38;
-  box-shadow: 0 0 0 2px rgba(7,92,56,0.1);
+  outline: 2px solid #b9d8c1;
+  border-color: var(--green);
 }
 
-.password-wrap {
-  position: relative;
+.password-row {
+  display: flex;
+  gap: 7px;
 }
 
-.password-wrap input {
-  padding-right: 65px;
+.password-row input {
+  flex: 1;
+  min-width: 0;
 }
 
 .show-password {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  color: #075c38;
-  font-weight: bold;
+  background: #edf3ee;
+  border: 1px solid #d5dfd7;
+  border-radius: 8px;
+  padding: 0 10px;
   cursor: pointer;
 }
 
-.submit-button {
+.login-button {
   width: 100%;
-  background: #075c38;
-  color: white;
   border: none;
-  padding: 14px;
-  margin-top: 23px;
-  border-radius: 7px;
+  border-radius: 8px;
+  background: var(--green);
+  color: white;
   font-size: 16px;
   font-weight: bold;
+  padding: 14px;
   cursor: pointer;
+  margin-top: 5px;
 }
 
-.submit-button:hover {
-  background: #043d27;
-}
-
-.extra-links {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.extra-links a {
-  color: #075c38;
-  font-weight: bold;
-  text-decoration: none;
+.login-button:hover {
+  background: var(--dark);
 }
 
 .message {
   display: none;
-  background: #fff5d9;
-  border: 1px solid #e5c45e;
-  color: #6b5310;
+  margin-top: 16px;
   padding: 12px;
-  border-radius: 6px;
+  background: #fff8df;
+  color: #614d13;
+  border-radius: 8px;
   font-size: 13px;
-  margin-top: 15px;
+}
+
+.links {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+}
+
+.links p {
+  margin: 9px 0;
+}
+
+.links a {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.notice {
+  margin-top: 22px;
+  padding: 12px;
+  border-left: 4px solid var(--gold);
+  background: #fff8df;
+  color: #614d13;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 footer {
+  background: var(--dark);
+  color: #e3eee7;
   text-align: center;
-  padding: 20px 15px;
-  color: #68776e;
-  font-size: 12px;
+  padding: 22px 15px;
+  font-size: 13px;
 }
 
-@media(max-width: 400px) {
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+@media (max-width: 500px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .login-card {
-    padding: 22px 16px;
-  }
-
-  header h1 {
-    font-size: 23px;
+    padding: 23px;
   }
 }
-</style></head><body><header>
-  <h1>FYB2SYB <span>2027</span></h1>
-  <p>Public Information Website</p>
-  <a href="index.html" class="home-link">← Back to Homepage</a>
-</header><main class="container">  <section class="login-card"><h2>Welcome Back</h2>
-<p class="intro">Sign in to your FYB2SYB account.</p>
+</style>
+</head>
 
-<div class="tabs">
-  <button type="button" class="tab active" id="memberTab"
-    onclick="selectLogin('member')">
-    Member Login
-  </button>
+<body>
 
-  <button type="button" class="tab" id="adminTab"
-    onclick="selectLogin('admin')">
-    Admin Login
-  </button>
-</div>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="index.html">FYB<span>2</span>SYB</a>
 
-<form id="loginForm">
-
-  <label for="email">Email Address</label>
-  <input
-    type="email"
-    id="email"
-    placeholder="Enter your email address"
-    autocomplete="username"
-    required>
-
-  <label for="password">Password</label>
-
-  <div class="password-wrap">
-    <input
-      type="password"
-      id="password"
-      placeholder="Enter your password"
-      autocomplete="current-password"
-      minlength="6"
-      required>
-
-    <button type="button" class="show-password"
-      onclick="togglePassword()">Show</button>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="member.html">Dashboard</a>
+    </nav>
   </div>
+</header>
 
-  <button type="submit" class="submit-button" id="submitButton">
-    Login as Member
-  </button>
+<main>
+  <section class="login-card">
+    <div class="login-icon" aria-hidden="true">🔐</div>
 
-  <div class="message" id="message" role="status">
-    This login page is not connected to an authentication service yet.
-    Your account cannot be verified until the backend is configured.
-  </div>
+    <h1>Member Login</h1>
 
-</form>
+    <p class="subtitle">
+      Sign in to access the FYB2SYB member area.
+    </p>
 
-<div class="extra-links" id="registerLink">
-  Don't have an account?
-  <a href="register.html">Create an account</a>
-</div>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email address"
+          autocomplete="username"
+          required
+        >
+      </div>
 
-<div class="extra-links">
-  <a href="index.html">Return to Homepage</a>
-</div>
+      <div class="form-group">
+        <label for="password">Password</label>
 
-  </section></main><footer>
-  &copy; <span id="year"></span> FYB2SYB. All rights reserved.
-</footer><script>
-let loginType = "member";
+        <div class="password-row">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
 
-function selectLogin(type) {
-  loginType = type;
+          <button
+            type="button"
+            class="show-password"
+            id="togglePassword"
+            aria-label="Show password"
+          >👁️</button>
+        </div>
+      </div>
 
-  document.getElementById("memberTab")
-    .classList.toggle("active", type === "member");
+      <button type="submit" class="login-button">
+        🔐 Sign In
+      </button>
 
-  document.getElementById("adminTab")
-    .classList.toggle("active", type === "admin");
+      <div class="message" id="message" role="status"></div>
+    </form>
 
-  document.getElementById("submitButton").textContent =
-    type === "admin" ? "Login as Administrator" : "Login as Member";
+    <div class="links">
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+      <p><a href="index.html">← Return to Homepage</a></p>
+    </div>
 
-  document.getElementById("registerLink").style.display =
-    type === "admin" ? "none" : "block";
+    <div class="notice">
+      <strong>Development notice:</strong>
+      Login authentication has not been connected to a secure backend yet.
+      This demonstration page does not verify accounts or send your credentials
+      to a server. Do not enter a real password until authentication is configured.
+    </div>
+  </section>
+</main>
 
-  document.getElementById("message").style.display = "none";
-}
+<footer>
+  <p><strong>FYB2SYB</strong> — Public Information Website</p>
+  <p>&copy; <span id="year"></span> FYB2SYB. All rights reserved.</p>
+  <p><a href="index.html">Home</a></p>
+</footer>
 
-function togglePassword() {
-  const field = document.getElementById("password");
-  const button = document.querySelector(".show-password");
+<script>
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("message");
 
-  if (field.type === "password") {
-    field.type = "text";
-    button.textContent = "Hide";
-  } else {
-    field.type = "password";
-    button.textContent = "Show";
-  }
-}
+togglePassword.addEventListener("click", function() {
+  const isHidden = passwordInput.type === "password";
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+  passwordInput.type = isHidden ? "text" : "password";
 
-  const message = document.getElementById("message");
+  togglePassword.textContent = isHidden ? "🙈" : "👁️";
 
-  message.textContent =
-    "The " + (loginType === "admin" ? "administrator" : "member") +
-    " login page is ready for setup. Authentication has not been connected yet, so nobody can sign in through this page yet.";
-
-  message.style.display = "block";
+  togglePassword.setAttribute(
+    "aria-label",
+    isHidden ? "Hide password" : "Show password"
+  );
 });
 
+loginForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  message.style.display = "block";
+  message.textContent =
+    "Login is not connected yet. Please wait until secure authentication is configured.";
+});
+ 
 document.getElementById("year").textContent = new Date().getFullYear();
-</script></body>
+</script>
+
+</body>
 </html>
