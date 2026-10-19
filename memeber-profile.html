@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Profile | FYB2SYB</title><style>
+* { box-sizing: border-box; }
+
+:root {
+  --green: #075c38;
+  --dark-green: #043d27;
+  --gold: #d5a52b;
+  --light: #f1f6f2;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: #26372c;
+}
+
+header {
+  background: var(--green);
+  color: white;
+  padding: 18px 16px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.brand span { color: #f1c64f; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.page-heading {
+  margin-bottom: 22px;
+}
+
+.page-heading h1 {
+  margin: 0 0 7px;
+  color: var(--green);
+  font-size: 29px;
+}
+
+.page-heading p {
+  color: #68776e;
+  margin: 0;
+  font-size: 14px;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 23px;
+  border-radius: 12px;
+  border: 1px solid #e0e7e2;
+  box-shadow: 0 4px 15px rgba(0,0,0,.04);
+  margin-bottom: 20px;
+}
+
+.profile-summary {
+  text-align: center;
+  border-top: 5px solid var(--gold);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #e0eee5;
+  color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.profile-summary h2 {
+  color: var(--green);
+  font-size: 21px;
+  margin: 0 0 5px;
+  overflow-wrap: anywhere;
+}
+
+.profile-summary p {
+  font-size: 13px;
+  color: #68776e;
+  overflow-wrap: anywhere;
+}
+
+.badge {
+  display: inline-block;
+  background: #fff4d3;
+  color: #755710;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+h3 {
+  color: var(--green);
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd7ce;
+  border-radius: 7px;
+  font-size: 14px;
+  background: white;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b6d9c5;
+  border-color: var(--green);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.button {
+  display: inline-block;
+  border: 0;
+  background: var(--green);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 18px;
+}
+
+.button:hover { background: var(--dark-green); }
+
+.button-gold {
+  background: var(--gold);
+  color: #201a09;
+}
+
+.button-light {
+  background: #e9f2ec;
+  color: var(--green);
+}
+
+.message {
+  display: none;
+  padding: 12px;
+  background: #fff5d9;
+  color: #695315;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.quick-links {
+  display: grid;
+  gap: 10px;
+}
+
+.quick-links a {
+  color: var(--green);
+  background: #f1f6f2;
+  padding: 11px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--dark-green);
+  color: white;
+  text-align: center;
+  padding: 22px 15px;
+  font-size: 12px;
+}
+
+footer a {
+  color: #f1c64f;
+  text-decoration: none;
+}
+
+@media(max-width: 720px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .page-heading h1 { font-size: 25px; }
+}
+</style></head><body><header>
+  <div class="header-inner">
+    <div class="brand">FYB2SYB <span>2027</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="member.html">Dashboard</a>
+      <a href="news.html">News</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </div>
+</header><main class="container">  <section class="page-heading">
+    <h1>My Profile & Settings</h1>
+    <p>View your profile details and explore your account settings.</p>
+  </section>  <div class="profile-layout"><aside>
+  <section class="card profile-summary">
+    <div class="avatar" id="avatar">M</div>
+    <h2 id="summaryName">Member Name</h2>
+    <p id="summaryEmail">Your email address</p>
+    <span class="badge">DEMO PROFILE</span>
+    <p>This is a sample profile preview.</p>
+    <a href="member.html" class="button button-light">Member Dashboard</a>
+  </section>
+
+  <section class="card">
+    <h3>Quick Links</h3>
+    <div class="quick-links">
+      <a href="news.html">📰 Read News</a>
+      <a href="gallery.html">🖼️ View Gallery</a>
+      <a href="videos.html">🎥 Videos</a>
+      <a href="contact.html">✉️ Contact</a>
+      <a href="login.html">🔐 Login Page</a>
+    </div>
+  </section>
+</aside>
+
+<div>
+
+  <section class="card">
+    <h3>Personal Information</h3>
+
+    <form id="profileForm">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" type="text"
+        placeholder="Enter your full name" autocomplete="name" required>
+
+      <label for="email">Email Address</label>
+      <input id="email" type="email"
+        placeholder="Enter your email address" autocomplete="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel"
+        placeholder="Enter your phone number" autocomplete="tel">
+
+      <label for="state">State</label>
+      <select id="state">
+        <option value="">Select state</option>
+        <option>Abia</option><option>Adamawa</option>
+        <option>Akwa Ibom</option><option>Anambra</option>
+        <option>Bauchi</option><option>Bayelsa</option>
+        <option>Benue</option><option>Borno</option>
+        <option>Cross River</option><option>Delta</option>
+        <option>Ebonyi</option><option>Edo</option>
+        <option>Ekiti</option><option>Enugu</option>
+        <option>Gombe</option><option>Imo</option>
+        <option>Jigawa</option><option>Kaduna</option>
+        <option>Kano</option><option>Katsina</option>
+        <option>Kebbi</option><option>Kogi</option>
+        <option>Kwara</option><option>Lagos</option>
+        <option>Nasarawa</option><option>Niger</option>
+        <option>Ogun</option><option>Ondo</option>
+        <option>Osun</option><option>Oyo</option>
+        <option>Plateau</option><option>Rivers</option>
+        <option>Sokoto</option><option>Taraba</option>
+        <option>Yobe</option><option>Zamfara</option>
+        <option>Federal Capital Territory</option>
+      </select>
+
+      <label for="bio">About Me (optional)</label>
+      <textarea id="bio" placeholder="Write a short introduction"></textarea>
+
+      <button type="submit" class="button">Preview Profile Changes</button>
+      <button type="button" id="clearButton" class="button button-light">Clear Form</button>
+
+      <div class="message" id="message" role="status"></div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h3>Account Settings</h3>
+    <p style="font-size:14px;color:#68776e">
+      Account security, password changes and saved profile information
+      will be activated after authentication is connected.
+    </p>
+
+    <a href="login.html" class="button">Go to Login</a>
+    <a href="register.html" class="button button-gold">Create Account</a>
+
+    <div class="message" id="settingsMessage" role="status"></div>
+  </section>
+
+</div>
+
+  </div>  <p style="font-size:12px;color:#68776e">
+    Security notice: this page is a public preview. Do not enter confidential
+    information here. Profile changes are not saved to a server.
+  </p></main><footer>
+  <p>© <span id="year"></span> FYB2SYB. All rights reserved.</p>
+  <a href="index.html">Return to Homepage</a>
+</footer><script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const fullName = document.getElementById("fullName");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+document.getElementById("profileForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  document.getElementById("summaryName").textContent =
+    fullName.value.trim() || "Member Name";
+
+  document.getElementById("summaryEmail").textContent =
+    email.value.trim() || "Your email address";
+
+  const initials = fullName.value.trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map(part => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  document.getElementById("avatar").textContent = initials || "M";
+
+  message.textContent =
+    "Profile preview updated. These changes are not saved permanently. Supabase must be connected to save your profile.";
+  message.style.display = "block";
+});
+
+document.getElementById("clearButton").addEventListener("click", function() {
+  document.getElementById("profileForm").reset();
+  document.getElementById("summaryName").textContent = "Member Name";
+  document.getElementById("summaryEmail").textContent = "Your email address";
+  document.getElementById("avatar").textContent = "M";
+  message.style.display = "none";
+});
+</script></body>
+</html>
