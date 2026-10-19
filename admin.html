@@ -1,0 +1,509 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin Dashboard | FYB2SYB</title><style>
+:root {
+  --green: #075c38;
+  --dark: #063d27;
+  --gold: #d5a52b;
+  --light: #f4f7f5;
+  --white: #ffffff;
+  --text: #24352c;
+  --muted: #68776e;
+  --border: #dfe7e1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+}
+
+header {
+  background: linear-gradient(135deg, var(--dark), var(--green));
+  color: white;
+  padding: 22px 16px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.brand span {
+  color: var(--gold);
+}
+
+.header-subtitle {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #e3eee7;
+}
+
+.status {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 9px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.container {
+  max-width: 1100px;
+  padding: 22px 14px 40px;
+  margin: auto;
+}
+
+.welcome {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(0,0,0,.04);
+  margin-bottom: 22px;
+}
+
+.welcome h1 {
+  margin: 0 0 8px;
+  font-size: 25px;
+}
+
+.welcome p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.notice {
+  margin-top: 15px;
+  background: #fff7df;
+  color: #705414;
+  border-left: 4px solid var(--gold);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.stat-card .icon {
+  font-size: 25px;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  margin: 12px 0 6px;
+}
+
+.stat-card strong {
+  font-size: 23px;
+  color: var(--green);
+}
+
+.stat-card p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.section {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 22px;
+}
+
+.section h2 {
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+
+.section-intro {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 7px;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #cfd9d1;
+  border-radius: 8px;
+  padding: 12px;
+  font: inherit;
+  font-size: 14px;
+  background: white;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: 2px solid #b8ddc6;
+  border-color: var(--green);
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.primary {
+  background: var(--green);
+  color: white;
+}
+
+.secondary {
+  background: #eaf2ec;
+  color: var(--green);
+}
+
+.gold {
+  background: var(--gold);
+  color: #231a04;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.action-link {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  color: var(--text);
+  text-decoration: none;
+  background: #fff;
+}
+
+.action-link strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.action-link span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.action-link:hover {
+  border-color: var(--green);
+  background: #f7fbf8;
+}
+
+#preview {
+  display: none;
+  background: #f5f8f5;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 18px;
+}
+
+#preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+#preview h3 {
+  margin-top: 0;
+}
+
+footer {
+  text-align: center;
+  padding: 22px 12px;
+  background: var(--dark);
+  color: #e7f0e9;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media (max-width: 650px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid, .actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome h1 {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
+</style></head><body><header>
+  <div class="header-inner">
+    <div>
+      <div class="brand">FYB2SYB <span>ADMIN</span></div>
+      <div class="header-subtitle">Website Management Dashboard</div>
+    </div>
+    <div class="status">● Dashboard Preview</div>
+  </div>
+</header><main class="container">  <section class="welcome">
+    <h1>Welcome to the Admin Dashboard</h1>
+    <p>Manage your website content, prepare news articles, and organize your media from one place.</p><div class="notice">
+  <strong>Important security notice:</strong>
+  This is the dashboard interface only. It is not yet protected by administrator authentication, and articles are not published to your live website. Do not enter passwords or confidential information here.
+</div>
+
+  </section>  <section class="stats">
+    <div class="stat-card">
+      <div class="icon">📰</div>
+      <h3>News Articles</h3>
+      <strong>—</strong>
+      <p>Connect the database to show articles.</p>
+    </div><div class="stat-card">
+  <div class="icon">🖼️</div>
+  <h3>Gallery Images</h3>
+  <strong>—</strong>
+  <p>Connect image storage to manage pictures.</p>
+</div>
+
+<div class="stat-card">
+  <div class="icon">🔐</div>
+  <h3>Admin Security</h3>
+  <strong>Pending</strong>
+  <p>Secure authentication has not been configured.</p>
+</div>
+
+  </section>  <section class="section" id="write-news">
+    <h2>✍️ Prepare a News Article</h2>
+    <p class="section-intro">
+      Draft your article below and preview it before publishing. This preview is stored only in this page; it does not publish or save the article to your public website.
+    </p><form id="newsForm">
+  <div class="form-grid">
+
+    <div class="field full">
+      <label for="headline">News Headline *</label>
+      <input id="headline" type="text" maxlength="180" required
+             placeholder="Enter your news headline">
+    </div>
+
+    <div class="field">
+      <label for="category">News Category</label>
+      <select id="category">
+        <option value="News">News</option>
+        <option value="Politics">Politics</option>
+        <option value="Community">Community</option>
+        <option value="Agriculture">Agriculture</option>
+        <option value="Announcements">Announcements</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="author">Author</label>
+      <input id="author" type="text" maxlength="100"
+             placeholder="Author's name">
+    </div>
+
+    <div class="field full">
+      <label for="summary">Short Summary</label>
+      <textarea id="summary" maxlength="500"
+                style="min-height:85px"
+                placeholder="Write a short summary of the news"></textarea>
+    </div>
+
+    <div class="field full">
+      <label for="imageUrl">Article Image URL</label>
+      <input id="imageUrl" type="url"
+             placeholder="https://example.com/image.jpg">
+    </div>
+
+    <div class="field full">
+      <label for="articleBody">Full News Content *</label>
+      <textarea id="articleBody" required
+                placeholder="Write the complete news article here..."></textarea>
+    </div>
+
+  </div>
+
+  <div class="button-row">
+    <button type="submit" class="button primary">Preview Article</button>
+    <button type="reset" class="button secondary">Clear Form</button>
+  </div>
+</form>
+
+<div id="preview" aria-live="polite">
+  <h3 id="previewHeadline"></h3>
+  <p id="previewMeta"></p>
+  <img id="previewImage" alt="Article preview" hidden>
+  <p id="previewSummary"></p>
+  <div id="previewBody" style="line-height:1.7; white-space:pre-wrap;"></div>
+  <p class="notice">Preview only. Publishing will be enabled after secure backend setup.</p>
+</div>
+
+  </section>  <section class="section">
+    <h2>⚙️ Website Management</h2>
+    <p class="section-intro">Quick links to your existing website pages.</p><div class="actions-grid">
+  <a class="action-link" href="index.html">
+    <strong>🏠 Homepage</strong>
+    <span>Open the public website homepage.</span>
+  </a>
+
+  <a class="action-link" href="news.html">
+    <strong>📰 News Page</strong>
+    <span>View the public news page.</span>
+  </a>
+
+  <a class="action-link" href="gallery.html">
+    <strong>🖼️ Gallery</strong>
+    <span>View the public image gallery.</span>
+  </a>
+
+  <a class="action-link" href="profile.html">
+    <strong>👤 Profile Page</strong>
+    <span>View the profile page.</span>
+  </a>
+</div>
+
+  </section></main><footer>
+  <strong>FYB2SYB <span>ADMIN DASHBOARD</span></strong><br>
+  Independent website management interface.<br>
+  <span>Secure login and publishing features still need to be configured.</span>
+</footer><script>
+const form = document.getElementById("newsForm");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const headline = document.getElementById("headline").value.trim();
+  const category = document.getElementById("category").value;
+  const author = document.getElementById("author").value.trim();
+  const summary = document.getElementById("summary").value.trim();
+  const body = document.getElementById("articleBody").value.trim();
+  const imageUrl = document.getElementById("imageUrl").value.trim();
+
+  if (!headline || !body) {
+    alert("Please enter the headline and full news content.");
+    return;
+  }
+
+  document.getElementById("previewHeadline").textContent = headline;
+  document.getElementById("previewMeta").textContent =
+    category + (author ? " • By " + author : "") +
+    " • " + new Date().toLocaleDateString();
+
+  document.getElementById("previewSummary").textContent = summary;
+  document.getElementById("previewBody").textContent = body;
+
+  const image = document.getElementById("previewImage");
+  image.hidden = true;
+  image.removeAttribute("src");
+
+  if (imageUrl) {
+    try {
+      const parsed = new URL(imageUrl);
+      if (parsed.protocol === "https:" || parsed.protocol === "http:") {
+        image.onload = () => { image.hidden = false; };
+        image.onerror = () => {
+          image.hidden = true;
+          alert("The image could not be loaded. Check the image URL.");
+        };
+        image.src = parsed.href;
+      }
+    } catch (error) {
+      alert("Please enter a valid image URL.");
+    }
+  }
+
+  document.getElementById("preview").style.display = "block";
+  document.getElementById("preview").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+</script></body>
+</html>
