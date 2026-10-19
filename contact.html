@@ -1,0 +1,433 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta name="description" content="Contact and send feedback to the Yahaya Bello public information website.">  <title>Contact Us | Yahaya Bello</title>  <style>
+    :root {
+      --green: #075c3b;
+      --dark-green: #043b28;
+      --gold: #d6aa38;
+      --white: #ffffff;
+      --light: #f4f7f4;
+      --text: #26352d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .welcome-bar {
+      background: var(--gold);
+      color: #17251c;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+
+    .welcome-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLeft 25s linear infinite;
+    }
+
+    .welcome-text {
+      padding-right: 50px;
+    }
+
+    @keyframes scrollLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 18px 5%;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--dark-green), var(--green));
+      color: var(--white);
+      text-align: center;
+      padding: 65px 20px;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1050px;
+      margin: 35px auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 28px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
+    }
+
+    .card h2 {
+      color: var(--green);
+      margin-bottom: 12px;
+      font-size: 25px;
+    }
+
+    .card p {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 6px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccd7ce;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 16px;
+      background: #fff;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid var(--gold);
+      border-color: var(--green);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .button {
+      display: inline-block;
+      border: none;
+      background: var(--green);
+      color: var(--white);
+      padding: 13px 20px;
+      border-radius: 6px;
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .button:hover {
+      background: var(--dark-green);
+    }
+
+    .whatsapp {
+      background: #168b48;
+    }
+
+    .whatsapp:hover {
+      background: #106b36;
+    }
+
+    .notice {
+      background: #fff8e5;
+      border: 1px solid #e8d28c;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 25px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #56635a;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 45px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .welcome-track {
+        animation: none;
+      }
+    }
+  </style></head><body>  <div class="welcome-bar">
+    <div class="welcome-track">
+      <span class="welcome-text">
+        Welcome to the Yahaya Bello Public Information Website • Send Feedback • Share Information • Stay Informed •
+      </span>
+      <span class="welcome-text" aria-hidden="true">
+        Welcome to the Yahaya Bello Public Information Website • Send Feedback • Share Information • Stay Informed •
+      </span>
+    </div>
+  </div>  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        YAHAYA <span>BELLO</span>
+      </a>  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">Biography</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="agenda.html">Public Service</a>
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+  </header>  <section class="hero">
+    <h1>Contact & Feedback</h1>
+    <p>
+      Have a question, correction, suggestion or verified news
+      contribution? Use the options below to get in touch.
+    </p>
+  </section>  <main class="container"><div class="contact-grid">
+
+  <section class="card">
+    <h2>Send a Message</h2>
+
+    <p>
+      Use this form to prepare a message about the website,
+      public information or a correction to published content.
+    </p>
+
+    <form id="contactForm">
+
+      <label for="name">Your Full Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your full name"
+        maxlength="100"
+        required
+      >
+
+      <label for="email">Your Email Address</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email address"
+        maxlength="150"
+        required
+      >
+
+      <label for="subject">Message Subject</label>
+      <select id="subject" name="subject" required>
+        <option value="">Choose a subject</option>
+        <option value="General enquiry">General enquiry</option>
+        <option value="News contribution">News contribution</option>
+        <option value="Correction to published information">Correction to published information</option>
+        <option value="Website feedback">Website feedback</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="message">Your Message</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Write your message here..."
+        maxlength="3000"
+        required
+      ></textarea>
+
+      <button class="button" type="submit">
+        Prepare Email
+      </button>
+
+      <p class="small">
+        This form opens your device's email application. It does
+        not send messages directly from this website.
+      </p>
+
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Other Ways to Connect</h2>
+
+    <p>
+      You can share this website with friends and community
+      members who may find the public information useful.
+    </p>
+
+    <a
+      class="button whatsapp"
+      href="https://wa.me/?text=Visit%20this%20Yahaya%20Bello%20public%20information%20website."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Share on WhatsApp
+    </a>
+
+    <hr style="border:0;border-top:1px solid #e5eae6;margin:25px 0;">
+
+    <h3 style="color:#075c3b;margin-bottom:10px;">
+      News and Information
+    </h3>
+
+    <p>
+      If you submit information for publication, please provide
+      reliable sources and distinguish confirmed facts from
+      personal opinions.
+    </p>
+
+    <a class="button" href="news.html">Visit News Page</a>
+
+    <hr style="border:0;border-top:1px solid #e5eae6;margin:25px 0;">
+
+    <h3 style="color:#075c3b;margin-bottom:10px;">
+      Explore the Website
+    </h3>
+
+    <p>Learn more about the site's published information.</p>
+
+    <a class="button" href="about.html">Biography</a>
+    <a class="button" href="agenda.html">Public Service</a>
+  </section>
+
+</div>
+
+<section class="notice">
+  <h3>Important Information</h3>
+  <p>
+    This is an independently prepared public-information website.
+    It is not an official campaign or personal contact channel
+    unless authorized by the relevant parties. No official phone
+    number or email address is being claimed on this page.
+  </p>
+</section>
+
+<div style="text-align:center;margin-top:25px;">
+  <a class="button" href="index.html">← Return to Home</a>
+</div>
+
+  </main>  <footer>
+    <p><strong>Yahaya Bello Public Information Website</strong></p>
+    <p>Leadership • Public Service • Community Development</p>
+    <p>Independently prepared information; not an official website unless authorized.</p>
+    <p>© <span id="year"></span> All rights reserved.</p>
+  </footer>  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert("Please complete all the fields.");
+        return;
+      }
+
+      const body =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n\n" +
+        "Message:\n" + message;
+
+      const mailto =
+        "mailto:?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailto;
+    });
+  </script></body>
+</html>
