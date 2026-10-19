@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Yahaya Bello | Senatorial Campaign Information</title>
+
+<meta name="description" content="Explore news, public service information, announcements and updates concerning Alhaji Yahaya Bello, former Governor of Kogi State.">
+
+<meta property="og:title" content="Yahaya Bello | Public Information">
+<meta property="og:description" content="News, public service records and updates concerning Alhaji Yahaya Bello.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://placehold.co/1200x630/064e3b/ffffff?text=YAHAYA+BELLO">
+
+<meta name="theme-color" content="#064e3b">
+
+<style>
+:root {
+    --green: #064e3b;
+    --dark-green: #033528;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --light: #f4f7f5;
+    --text: #222222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* WELCOME SCROLLING MESSAGE */
+
+.welcome-bar {
+    background: var(--dark-green);
+    color: var(--white);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 12px 0;
+    border-bottom: 3px solid var(--gold);
+}
+
+.welcome-track {
+    display: flex;
+    width: max-content;
+    animation: welcomeScroll 25s linear infinite;
+}
+
+.welcome-text {
+    flex-shrink: 0;
+    padding-right: 60px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.welcome-text span {
+    color: var(--gold);
+    margin: 0 12px;
+}
+
+@keyframes welcomeScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .welcome-track {
+        animation: none;
+        width: auto;
+    }
+
+    .welcome-text:nth-child(2) {
+        display: none;
+    }
+
+    .welcome-bar {
+        white-space: normal;
+    }
+}
+
+/* HEADER */
+
+header {
+    background: var(--green);
+    color: var(--white);
+    padding: 18px 6%;
+    border-bottom: 4px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.logo span {
+    display: block;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+nav a {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 490px;
+    padding: 75px 7%;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,53,40,.97),
+            rgba(6,78,59,.80)
+        ),
+        url("https://placehold.co/1600x900/064e3b/ffffff?text=YAHAYA+BELLO");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 780px;
+}
+
+.hero-label {
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 7vw, 68px);
+    line-height: 1.12;
+    margin: 18px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero p {
+    font-size: 17px;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid var(--gold);
+    transition: .2s;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: #14251d;
+}
+
+.btn-outline {
+    color: var(--white);
+}
+
+.btn:hover {
+    opacity: .88;
+}
+
+/* NOTICE */
+
+.notice {
+    padding: 17px 6%;
+    background: #fff8df;
+    border-left: 5px solid var(--gold);
+    font-size: 14px;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.section-title h2 {
+    color: var(--green);
+    font-size: clamp(27px, 4vw, 37px);
+    line-height: 1.3;
+}
+
+.section-title p {
+    color: #666;
+    margin-top: 8px;
+}
+
+.light-section {
+    background: var(--light);
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.candidate-photo {
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    border: 4px solid var(--gold);
+    border-radius: 10px;
+    background: var(--light);
+}
+
+.about-text h3 {
+    color: var(--green);
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+/* INFORMATION CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 4px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #555;
+    font-size: 15px;
+}
+
+.card a {
+    display: inline-block;
+    color: var(--green);
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* NEWS */
+
+.news-card {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+    padding: 22px;
+    border-radius: 9px;
+    background: var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+.news-card img {
+    width: 100%;
+    min-height: 220px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    background: var(--light);
+}
+
+.category {
+    display: inline-block;
+    color: var(--green);
+    background: #e4f3ec;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.news-card h3 {
+    color: var(--green);
+    margin: 12px 0;
+}
+
+.news-card p {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.read-more {
+    display: inline-block;
+    background: var(--green);
+    color: var(--white);
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* CONTACT */
+
+.contact-box {
+    background: var(--green);
+    color: var(--white);
+    text-align: center;
+    padding: 38px 22px;
+    border-radius: 10px;
+}
+
+.contact-box h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    margin-bottom: 22px;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25d366;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark-green);
+    color: var(--white);
+    text-align: center;
+    padding: 28px 6%;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 7px 0;
+}
+
+footer a {
+    color: var(--gold);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 800px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 55px 6%;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card img {
+        height: 230px;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MOVING WELCOME MESSAGE -->
+
+<div class="welcome-bar" aria-label="Welcome message">
+    <div class="welcome-track">
+
+        <div class="welcome-text">
+            Welcome to the Yahaya Bello Senatorial Campaign Information Website!
+            <span>✦</span>
+            Explore public service information, news and announcements.
+            <span>✦</span>
+            Thank you for visiting our website!
+        </div>
+
+        <div class="welcome-text" aria-hidden="true">
+            Welcome to the Yahaya Bello Senatorial Campaign Information Website!
+            <span>✦</span>
+            Explore public service information, news and announcements.
+            <span>✦</span>
+            Thank you for visiting our website!
+        </div>
+
+    </div>
+</div>
+
+<!-- WEBSITE HEADER -->
+
+<header>
+
+    <a href="index.html" class="logo">
+        YAHAYA BELLO
+        <span>SENATORIAL CAMPAIGN INFORMATION</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="profile.html">Public Record</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            Kogi State, Nigeria
+        </div>
+
+        <h1>
+            ALHAJI<br>
+            <span>YAHAYA BELLO</span>
+        </h1>
+
+        <p>
+            Explore information about the former Governor of Kogi State,
+            his public service record, political activities, and verified
+            announcements concerning his proposed senatorial ambitions.
+        </p>
+
+        <div class="buttons">
+
+            <a href="about.html" class="btn btn-gold">
+                About Yahaya Bello
+            </a>
+
+            <a href="news.html" class="btn btn-outline">
+                Read News
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TRANSPARENCY NOTICE -->
+
+<div class="notice">
+    <strong>Website notice:</strong>
+    This is an independently prepared public-information website.
+    It is not represented as an official campaign website unless
+    authorised by the campaign organisation. Confirm candidacy,
+    district, nomination status and announcements through reliable
+    official sources.
+</div>
+
+<!-- ABOUT SECTION -->
+
+<section id="about">
+
+    <div class="section-title">
+        <h2>About Yahaya Bello</h2>
+        <p>Biography and public service information</p>
+    </div>
+
+    <div class="about-grid">
+
+        <img
+            class="candidate-photo"
+            src="https://placehold.co/700x800/064e3b/ffffff?text=ADD+CANDIDATE+PHOTO"
+            alt="Placeholder for a verified photograph of Alhaji Yahaya Bello"
+            loading="lazy"
+        >
+
+        <div class="about-text">
+
+            <h3>Alhaji Yahaya Adoza Bello</h3>
+
+            <p>
+                Alhaji Yahaya Bello served as Governor of Kogi State
+                from January 2016 to January 2024.
+            </p>
+
+            <p>
+                This website provides space for verified information
+                about his background, political career, public
+                administration, and documented public statements.
+            </p>
+
+            <p>
+                Information about a senatorial candidacy and any
+                proposed policy programme will be published when
+                confirmed by reliable sources.
+            </p>
+
+            <a href="about.html" class="btn btn-gold">
+                Read Full Biography
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PUBLIC SERVICE SECTION -->
+
+<section class="light-section" id="record">
+
+    <div class="section-title">
+        <h2>Public Service & Information</h2>
+        <p>Explore records, announcements and public-interest issues</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <h3>Biography</h3>
+
+            <p>
+                Learn about his background and political career
+                through verified biographical information.
+            </p>
+
+            <a href="about.html">Read Biography →</a>
+        </article>
+
+        <article class="card">
+            <h3>News & Announcements</h3>
+
+            <p>
+                Read published reports, official statements,
+                and confirmed political developments.
+            </p>
+
+            <a href="news.html">Explore News →</a>
+        </article>
+
+        <article class="card">
+            <h3>Public Service Record</h3>
+
+            <p>
+                Review documented government activities,
+                policies, projects, and relevant public records.
+            </p>
+
+            <a href="profile.html">View Public Record →</a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- NEWS SECTION -->
+
+<section id="news">
+
+    <div class="section-title">
+        <h2>News & Updates</h2>
+        <p>Public statements, reports and announcements</p>
+    </div>
+
+    <article class="news-card">
+
+        <img
+            src="https://placehold.co/900x600/064e3b/ffffff?text=YAHAYA+BELLO+NEWS"
+            alt="Placeholder for a verified news photograph"
+            loading="lazy"
+        >
+
+        <div>
+
+            <span class="category">Public Information</span>
+
+            <h3>
+                Yahaya Bello: Biography and Public Service
+            </h3>
+
+            <p>
+                Explore background information about the former
+                governor and review documented milestones from
+                his time in public office.
+            </p>
+
+            <a href="news.html" class="read-more">
+                Visit News Page
+            </a>
+
+        </div>
+
+    </article>
+
+</section>
+
+<!-- OTHER WEBSITE PAGES -->
+
+<section class="light-section" id="pages">
+
+    <div class="section-title">
+        <h2>Explore Our Website</h2>
+        <p>Use the links below to visit other sections</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <h3>Photo Gallery</h3>
+            <p>
+                Browse photographs and captions from documented
+                public events and engagements.
+            </p>
+            <a href="gallery.html">Open Gallery →</a>
+        </article>
+
+        <article class="card">
+            <h3>Policy Agenda</h3>
+            <p>
+                Review published policy proposals and public-interest
+                priorities, distinguishing proposals from confirmed plans.
+            </p>
+            <a href="agenda.html">View Agenda →</a>
+        </article>
+
+        <article class="card">
+            <h3>Contact & Enquiries</h3>
+            <p>
+                Find information about contacting the website
+                administrator and sharing public announcements.
+            </p>
+            <a href="contact.html">Contact Us →</a>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- CONTACT AND WHATSAPP SHARING -->
+
+<section id="contact">
+
+    <div class="contact-box">
+
+        <h2>Stay Informed</h2>
+
+        <p>
+            Share this public-information website with friends
+            and contacts through WhatsApp.
+        </p>
+
+        <a
+            class="whatsapp-btn"
+            href="https://wa.me/?text=Visit%20this%20Yahaya%20Bello%20public-information%20website"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Share on WhatsApp
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>YAHAYA BELLO — SENATORIAL CAMPAIGN INFORMATION</strong>
+    </p>
+
+    <p>
+        Independently prepared public-information website.
+        Not an official campaign website unless authorised.
+    </p>
+
+    <p>
+        &copy; <span id="year"></span> Website Administrator.
+    </p>
+
+    <p>
+        <a href="#home">Back to Top ↑</a>
+    </p>
+
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
