@@ -1,384 +1,587 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Member Profile | FYB2SYB</title><style>
-* { box-sizing: border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FYB2SYB member profile and account settings.">
+  <title>Member Profile | FYB2SYB</title>
 
-:root {
-  --green: #075c38;
-  --dark-green: #043d27;
-  --gold: #d5a52b;
-  --light: #f1f6f2;
-}
+  <style>
+    :root {
+      --green: #075b35;
+      --dark-green: #043d25;
+      --gold: #d8ad35;
+      --light: #f4f7f4;
+      --white: #ffffff;
+      --text: #24352b;
+      --muted: #68776e;
+      --border: #e1e8e2;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--light);
-  color: #26372c;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-header {
-  background: var(--green);
-  color: white;
-  padding: 18px 16px;
-  border-bottom: 4px solid var(--gold);
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-.header-inner {
-  max-width: 1000px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+    a {
+      text-decoration: none;
+    }
 
-.brand {
-  font-size: 23px;
-  font-weight: bold;
-}
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 18px 5%;
+      border-bottom: 4px solid var(--gold);
+    }
 
-.brand span { color: #f1c64f; }
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
+    .brand {
+      color: white;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
-}
+    .brand span {
+      color: var(--gold);
+    }
 
-.container {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 0 16px;
-}
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-.page-heading {
-  margin-bottom: 22px;
-}
+    nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-.page-heading h1 {
-  margin: 0 0 7px;
-  color: var(--green);
-  font-size: 29px;
-}
+    nav a:hover {
+      color: var(--gold);
+    }
 
-.page-heading p {
-  color: #68776e;
-  margin: 0;
-  font-size: 14px;
-}
+    .hero {
+      background: linear-gradient(135deg, var(--dark-green), var(--green));
+      color: white;
+      text-align: center;
+      padding: 42px 20px 65px;
+    }
 
-.profile-layout {
-  display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
-  gap: 20px;
-}
+    .hero h1 {
+      font-size: clamp(27px, 5vw, 40px);
+      margin-bottom: 8px;
+    }
 
-.card {
-  background: white;
-  padding: 23px;
-  border-radius: 12px;
-  border: 1px solid #e0e7e2;
-  box-shadow: 0 4px 15px rgba(0,0,0,.04);
-  margin-bottom: 20px;
-}
+    .hero p {
+      color: #e1eee5;
+      max-width: 650px;
+      margin: auto;
+    }
 
-.profile-summary {
-  text-align: center;
-  border-top: 5px solid var(--gold);
-}
+    .container {
+      max-width: 1000px;
+      margin: -35px auto 45px;
+      padding: 0 16px;
+      position: relative;
+    }
 
-.avatar {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 15px;
-  border-radius: 50%;
-  background: #e0eee5;
-  color: var(--green);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  font-weight: bold;
-}
+    .profile-card,
+    .section-card {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 5px 22px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
 
-.profile-summary h2 {
-  color: var(--green);
-  font-size: 21px;
-  margin: 0 0 5px;
-  overflow-wrap: anywhere;
-}
+    .profile-top {
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-.profile-summary p {
-  font-size: 13px;
-  color: #68776e;
-  overflow-wrap: anywhere;
-}
+    .avatar {
+      width: 95px;
+      height: 95px;
+      border-radius: 50%;
+      background: #e5f1e8;
+      border: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-size: 36px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
 
-.badge {
-  display: inline-block;
-  background: #fff4d3;
-  color: #755710;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: bold;
-}
+    .profile-info {
+      flex: 1;
+      min-width: 180px;
+    }
 
-h3 {
-  color: var(--green);
-  margin-top: 0;
-}
+    .profile-info h2 {
+      color: var(--green);
+      font-size: 25px;
+      overflow-wrap: anywhere;
+    }
 
-label {
-  display: block;
-  font-size: 13px;
-  font-weight: bold;
-  margin: 15px 0 7px;
-}
+    .profile-info p {
+      color: var(--muted);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
 
-input, textarea, select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccd7ce;
-  border-radius: 7px;
-  font-size: 14px;
-  background: white;
-}
+    .badge {
+      display: inline-block;
+      margin-top: 8px;
+      background: #e5f4e9;
+      color: var(--green);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
 
-input:focus, textarea:focus, select:focus {
-  outline: 2px solid #b6d9c5;
-  border-color: var(--green);
-}
+    .card-heading {
+      padding: 19px 24px;
+      border-bottom: 1px solid var(--border);
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--green);
+    }
 
-textarea {
-  resize: vertical;
-  min-height: 90px;
-}
+    .card-body {
+      padding: 24px;
+    }
 
-.button {
-  display: inline-block;
-  border: 0;
-  background: var(--green);
-  color: white;
-  padding: 12px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 18px;
-}
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
 
-.button:hover { background: var(--dark-green); }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
 
-.button-gold {
-  background: var(--gold);
-  color: #201a09;
-}
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
 
-.button-light {
-  background: #e9f2ec;
-  color: var(--green);
-}
+    label {
+      font-size: 13px;
+      font-weight: bold;
+      color: #45584b;
+    }
 
-.message {
-  display: none;
-  padding: 12px;
-  background: #fff5d9;
-  color: #695315;
-  border-radius: 6px;
-  font-size: 13px;
-  margin-top: 15px;
-}
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d4dfd6;
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      background: white;
+      color: var(--text);
+    }
 
-.quick-links {
-  display: grid;
-  gap: 10px;
-}
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 2px solid #b7d8c0;
+      border-color: var(--green);
+    }
 
-.quick-links a {
-  color: var(--green);
-  background: #f1f6f2;
-  padding: 11px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-}
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
 
-footer {
-  background: var(--dark-green);
-  color: white;
-  text-align: center;
-  padding: 22px 15px;
-  font-size: 12px;
-}
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
 
-footer a {
-  color: #f1c64f;
-  text-decoration: none;
-}
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
 
-@media(max-width: 720px) {
-  .profile-layout { grid-template-columns: 1fr; }
-  .header-inner { flex-direction: column; align-items: flex-start; }
-  .page-heading h1 { font-size: 25px; }
-}
-</style></head><body><header>
+    .btn-primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark-green);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #17281c;
+    }
+
+    .btn-light {
+      background: #edf3ee;
+      color: var(--green);
+    }
+
+    .quick-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .quick-link {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--green);
+      font-weight: bold;
+      background: #fbfdfb;
+      transition: 0.2s;
+    }
+
+    .quick-link:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .quick-link small {
+      display: block;
+      color: var(--muted);
+      font-weight: normal;
+      margin-top: 4px;
+    }
+
+    .notice {
+      background: #fff8df;
+      border-left: 4px solid var(--gold);
+      padding: 14px 16px;
+      margin-top: 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #5f4a12;
+    }
+
+    .status-message {
+      display: none;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: #e3eee7;
+      text-align: center;
+      padding: 24px 15px;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 16px;
+      }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      .profile-top {
+        padding: 22px;
+      }
+
+      .card-body {
+        padding: 18px;
+      }
+
+      .form-grid,
+      .quick-links {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
   <div class="header-inner">
-    <div class="brand">FYB2SYB <span>2027</span></div>
-    <nav>
+    <a class="brand" href="index.html">FYB<span>2</span>SYB</a>
+
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="member.html">Dashboard</a>
       <a href="news.html">News</a>
+      <a href="gallery.html">Gallery</a>
       <a href="login.html">Login</a>
     </nav>
   </div>
-</header><main class="container">  <section class="page-heading">
-    <h1>My Profile & Settings</h1>
-    <p>View your profile details and explore your account settings.</p>
-  </section>  <div class="profile-layout"><aside>
-  <section class="card profile-summary">
-    <div class="avatar" id="avatar">M</div>
-    <h2 id="summaryName">Member Name</h2>
-    <p id="summaryEmail">Your email address</p>
-    <span class="badge">DEMO PROFILE</span>
-    <p>This is a sample profile preview.</p>
-    <a href="member.html" class="button button-light">Member Dashboard</a>
-  </section>
+</header>
 
-  <section class="card">
-    <h3>Quick Links</h3>
-    <div class="quick-links">
-      <a href="news.html">📰 Read News</a>
-      <a href="gallery.html">🖼️ View Gallery</a>
-      <a href="videos.html">🎥 Videos</a>
-      <a href="contact.html">✉️ Contact</a>
-      <a href="login.html">🔐 Login Page</a>
+<section class="hero">
+  <h1>Member Profile</h1>
+  <p>Manage your profile information and explore the FYB2SYB website.</p>
+</section>
+
+<main class="container">
+
+  <section class="profile-card">
+    <div class="profile-top">
+      <div class="avatar" id="avatar">M</div>
+
+      <div class="profile-info">
+        <h2 id="displayName">Member Name</h2>
+        <p id="displayEmail">Email address not added</p>
+        <p id="displayLocation">Location not added</p>
+        <span class="badge">Member Profile Preview</span>
+      </div>
+
+      <a href="member.html" class="btn btn-light">My Dashboard</a>
     </div>
   </section>
-</aside>
 
-<div>
+  <section class="section-card">
+    <div class="card-heading">Personal Information</div>
 
-  <section class="card">
-    <h3>Personal Information</h3>
+    <div class="card-body">
+      <form id="profileForm">
+        <div class="form-grid">
 
-    <form id="profileForm">
-      <label for="fullName">Full Name</label>
-      <input id="fullName" type="text"
-        placeholder="Enter your full name" autocomplete="name" required>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your full name">
+          </div>
 
-      <label for="email">Email Address</label>
-      <input id="email" type="email"
-        placeholder="Enter your email address" autocomplete="email" required>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email address">
+          </div>
 
-      <label for="phone">Phone Number</label>
-      <input id="phone" type="tel"
-        placeholder="Enter your phone number" autocomplete="tel">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+          </div>
 
-      <label for="state">State</label>
-      <select id="state">
-        <option value="">Select state</option>
-        <option>Abia</option><option>Adamawa</option>
-        <option>Akwa Ibom</option><option>Anambra</option>
-        <option>Bauchi</option><option>Bayelsa</option>
-        <option>Benue</option><option>Borno</option>
-        <option>Cross River</option><option>Delta</option>
-        <option>Ebonyi</option><option>Edo</option>
-        <option>Ekiti</option><option>Enugu</option>
-        <option>Gombe</option><option>Imo</option>
-        <option>Jigawa</option><option>Kaduna</option>
-        <option>Kano</option><option>Katsina</option>
-        <option>Kebbi</option><option>Kogi</option>
-        <option>Kwara</option><option>Lagos</option>
-        <option>Nasarawa</option><option>Niger</option>
-        <option>Ogun</option><option>Ondo</option>
-        <option>Osun</option><option>Oyo</option>
-        <option>Plateau</option><option>Rivers</option>
-        <option>Sokoto</option><option>Taraba</option>
-        <option>Yobe</option><option>Zamfara</option>
-        <option>Federal Capital Territory</option>
-      </select>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" placeholder="e.g. Kogi State">
+          </div>
 
-      <label for="bio">About Me (optional)</label>
-      <textarea id="bio" placeholder="Write a short introduction"></textarea>
+          <div class="form-group">
+            <label for="lga">Local Government Area</label>
+            <input type="text" id="lga" placeholder="Enter your LGA">
+          </div>
 
-      <button type="submit" class="button">Preview Profile Changes</button>
-      <button type="button" id="clearButton" class="button button-light">Clear Form</button>
+          <div class="form-group">
+            <label for="membership">Membership Interest</label>
+            <select id="membership">
+              <option value="">Select an option</option>
+              <option>Community Member</option>
+              <option>Volunteer</option>
+              <option>Media Supporter</option>
+              <option>General Supporter</option>
+            </select>
+          </div>
 
-      <div class="message" id="message" role="status"></div>
-    </form>
+          <div class="form-group full">
+            <label for="bio">About Me</label>
+            <textarea id="bio" placeholder="Write a short introduction about yourself"></textarea>
+          </div>
+
+        </div>
+
+        <div class="button-row">
+          <button type="submit" class="btn btn-primary">Preview Changes</button>
+          <button type="button" class="btn btn-light" id="clearButton">Clear Form</button>
+        </div>
+
+        <div class="status-message" id="statusMessage" role="status"></div>
+      </form>
+
+      <div class="notice">
+        <strong>Important:</strong> This page is currently a front-end preview.
+        Changes are displayed in your browser but are not saved to a secure
+        member account or database. Supabase or another backend must be
+        connected before permanent saving and real authentication are available.
+      </div>
+    </div>
   </section>
 
-  <section class="card">
-    <h3>Account Settings</h3>
-    <p style="font-size:14px;color:#68776e">
-      Account security, password changes and saved profile information
-      will be activated after authentication is connected.
-    </p>
+  <section class="section-card">
+    <div class="card-heading">Quick Links</div>
 
-    <a href="login.html" class="button">Go to Login</a>
-    <a href="register.html" class="button button-gold">Create Account</a>
+    <div class="card-body">
+      <div class="quick-links">
+        <a class="quick-link" href="member.html">
+          Member Dashboard
+          <small>Visit your dashboard page.</small>
+        </a>
 
-    <div class="message" id="settingsMessage" role="status"></div>
+        <a class="quick-link" href="news.html">
+          Latest News
+          <small>Read published website updates.</small>
+        </a>
+
+        <a class="quick-link" href="gallery.html">
+          Photo Gallery
+          <small>View available gallery pictures.</small>
+        </a>
+
+        <a class="quick-link" href="videos.html">
+          Videos
+          <small>Explore video content.</small>
+        </a>
+
+        <a class="quick-link" href="agenda.html">
+          Agenda
+          <small>View information and priorities.</small>
+        </a>
+
+        <a class="quick-link" href="contact.html">
+          Contact
+          <small>Visit the contact information page.</small>
+        </a>
+      </div>
+    </div>
   </section>
 
-</div>
+  <section class="section-card">
+    <div class="card-heading">Account Access</div>
 
-  </div>  <p style="font-size:12px;color:#68776e">
-    Security notice: this page is a public preview. Do not enter confidential
-    information here. Profile changes are not saved to a server.
-  </p></main><footer>
-  <p>© <span id="year"></span> FYB2SYB. All rights reserved.</p>
-  <a href="index.html">Return to Homepage</a>
-</footer><script>
-document.getElementById("year").textContent = new Date().getFullYear();
+    <div class="card-body">
+      <p>
+        Member registration and login need to be connected to a backend
+        before accounts can be verified securely.
+      </p>
 
-const fullName = document.getElementById("fullName");
-const email = document.getElementById("email");
-const message = document.getElementById("message");
+      <div class="button-row">
+        <a href="login.html" class="btn btn-primary">Member Login</a>
+        <a href="register.html" class="btn btn-gold">Register</a>
+        <a href="index.html" class="btn btn-light">Back to Home</a>
+      </div>
+    </div>
+  </section>
 
-document.getElementById("profileForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+</main>
 
-  document.getElementById("summaryName").textContent =
-    fullName.value.trim() || "Member Name";
+<footer>
+  <p><strong>FYB2SYB</strong> — Public Information Website</p>
+  <p>Peace • Unity • Community Development</p>
+  <p>&copy; <span id="year"></span> FYB2SYB. All rights reserved.</p>
+  <p><a href="index.html">Return to Homepage</a></p>
+</footer>
 
-  document.getElementById("summaryEmail").textContent =
-    email.value.trim() || "Your email address";
+<script>
+  const form = document.getElementById("profileForm");
+  const statusMessage = document.getElementById("statusMessage");
 
-  const initials = fullName.value.trim()
-    .split(/\s+/)
-    .filter(Boolean)
-    .map(part => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+  const fields = {
+    fullName: document.getElementById("fullName"),
+    email: document.getElementById("email"),
+    phone: document.getElementById("phone"),
+    state: document.getElementById("state"),
+    lga: document.getElementById("lga"),
+    membership: document.getElementById("membership"),
+    bio: document.getElementById("bio")
+  };
 
-  document.getElementById("avatar").textContent = initials || "M";
+  function updatePreview() {
+    const name = fields.fullName.value.trim();
+    const email = fields.email.value.trim();
+    const state = fields.state.value.trim();
+    const lga = fields.lga.value.trim();
 
-  message.textContent =
-    "Profile preview updated. These changes are not saved permanently. Supabase must be connected to save your profile.";
-  message.style.display = "block";
-});
+    document.getElementById("displayName").textContent =
+      name || "Member Name";
 
-document.getElementById("clearButton").addEventListener("click", function() {
-  document.getElementById("profileForm").reset();
-  document.getElementById("summaryName").textContent = "Member Name";
-  document.getElementById("summaryEmail").textContent = "Your email address";
-  document.getElementById("avatar").textContent = "M";
-  message.style.display = "none";
-});
-</script></body>
+    document.getElementById("displayEmail").textContent =
+      email || "Email address not added";
+
+    document.getElementById("displayLocation").textContent =
+      [lga, state].filter(Boolean).join(", ") || "Location not added";
+
+    document.getElementById("avatar").textContent =
+      name ? name.charAt(0).toUpperCase() : "M";
+  }
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    updatePreview();
+
+    statusMessage.style.display = "block";
+    statusMessage.style.background = "#e5f4e9";
+    statusMessage.style.color = "#075b35";
+    statusMessage.textContent =
+      "Preview updated in this browser. Your information has not been saved to a server.";
+  });
+
+  document.getElementById("clearButton").addEventListener("click", function() {
+    form.reset();
+    updatePreview();
+
+    statusMessage.style.display = "block";
+    statusMessage.style.background = "#edf3ee";
+    statusMessage.style.color = "#075b35";
+    statusMessage.textContent = "Form cleared.";
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
 </html>
