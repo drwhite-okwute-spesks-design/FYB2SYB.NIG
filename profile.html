@@ -1,0 +1,387 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profile and public background information about Alhaji Yahaya Bello, former Governor of Kogi State.">
+  <title>Profile | Yahaya Bello</title>  <style>
+    :root {
+      --green: #075c3b;
+      --dark-green: #043b28;
+      --gold: #d6aa38;
+      --white: #ffffff;
+      --light: #f4f7f4;
+      --text: #26352d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .welcome-bar {
+      background: var(--gold);
+      color: #17251c;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+
+    .welcome-track {
+      display: flex;
+      width: max-content;
+      animation: scrollLeft 25s linear infinite;
+    }
+
+    .welcome-text {
+      padding-right: 50px;
+    }
+
+    @keyframes scrollLeft {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 18px 5%;
+    }
+
+    .header-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--dark-green), var(--green));
+      color: var(--white);
+      text-align: center;
+      padding: 65px 20px;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1050px;
+      margin: 35px auto;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,.07);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      margin-bottom: 30px;
+    }
+
+    .profile-image {
+      min-height: 330px;
+      background: #e5eee8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px;
+    }
+
+    .profile-image img {
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: 100%;
+      max-height: 430px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .profile-details {
+      padding: 30px;
+    }
+
+    .profile-details h2,
+    .section-title {
+      color: var(--green);
+      margin-bottom: 15px;
+    }
+
+    .profile-details h2 {
+      font-size: 27px;
+    }
+
+    .label {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .info-row {
+      padding: 10px 0;
+      border-bottom: 1px solid #e5eae6;
+    }
+
+    .section-title {
+      font-size: 27px;
+      margin-top: 35px;
+    }
+
+    .content-card {
+      background: var(--white);
+      padding: 25px;
+      margin-bottom: 20px;
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.04);
+    }
+
+    .content-card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 5px;
+      margin: 10px 8px 0 0;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: var(--dark-green);
+    }
+
+    .notice {
+      background: #fff8e5;
+      border: 1px solid #e8d28c;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 25px;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: var(--white);
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 45px;
+    }
+
+    footer p {
+      font-size: 13px;
+      margin: 5px 0;
+    }
+
+    @media (max-width: 700px) {
+      .profile-card {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-image {
+        min-height: 260px;
+      }
+
+      .profile-details {
+        padding: 22px;
+      }
+
+      .header-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .welcome-track {
+        animation: none;
+      }
+    }
+  </style></head><body>  <div class="welcome-bar">
+    <div class="welcome-track">
+      <span class="welcome-text">
+        Welcome to the Yahaya Bello Public Information Website • Leadership • Public Service • Peace and Development •
+      </span>
+      <span class="welcome-text" aria-hidden="true">
+        Welcome to the Yahaya Bello Public Information Website • Leadership • Public Service • Peace and Development •
+      </span>
+    </div>
+  </div>  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        YAHAYA <span>BELLO</span>
+      </a>  <nav aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">Biography</a>
+    <a href="news.html">News</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="agenda.html">Public Service</a>
+    <a href="profile.html">Profile</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+  </header>  <section class="hero">
+    <h1>Personal & Public Profile</h1>
+    <p>
+      A profile page for public background information,
+      leadership history and verified updates about Alhaji Yahaya Bello.
+    </p>
+  </section>  <main class="container"><section class="profile-card">
+
+  <div class="profile-image">
+    <!-- Replace this placeholder with a genuine photo you have permission to use. -->
+    <img
+      src="https://placehold.co/600x750/075c3b/ffffff?text=YAHAYA+BELLO"
+      alt="Placeholder image for Alhaji Yahaya Bello"
+      onerror="this.onerror=null;this.src='https://placehold.co/600x750/075c3b/ffffff?text=PHOTO+UNAVAILABLE';"
+    >
+  </div>
+
+  <div class="profile-details">
+    <h2>Alhaji Yahaya Bello</h2>
+    <p><strong>Former Governor of Kogi State, Nigeria</strong></p>
+
+    <div class="info-row">
+      <span class="label">Public Office:</span>
+      Former Governor of Kogi State
+    </div>
+
+    <div class="info-row">
+      <span class="label">Tenure:</span>
+      January 2016 – January 2024
+    </div>
+
+    <div class="info-row">
+      <span class="label">Country:</span>
+      Nigeria
+    </div>
+
+    <div class="info-row">
+      <span class="label">Political Information:</span>
+      Confirm current party affiliation and any declared candidacy through reliable, up-to-date sources.
+    </div>
+
+    <a class="button" href="about.html">Read Biography</a>
+    <a class="button" href="news.html">Latest Updates</a>
+  </div>
+
+</section>
+
+<h2 class="section-title">Background</h2>
+
+<section class="content-card">
+  <h3>Public Leadership</h3>
+  <p>
+    Yahaya Bello served as Governor of Kogi State from 2016 to
+    2024. His time in office forms part of the state's recent
+    political history. Visitors can use the biography and news
+    sections of this website to explore documented information
+    about his public career.
+  </p>
+</section>
+
+<section class="content-card">
+  <h3>Public Engagement</h3>
+  <p>
+    Public engagement provides an opportunity for citizens to
+    discuss community needs, governance, infrastructure,
+    education, healthcare, agriculture and economic development.
+    Any statements attributed to Yahaya Bello should be supported
+    by a reliable source.
+  </p>
+</section>
+
+<section class="content-card">
+  <h3>Political Updates</h3>
+  <p>
+    This page may be updated with verified announcements about
+    political activities, public appearances and future ambitions.
+    A proposed candidacy or campaign should not be described as
+    officially confirmed until supported by a reliable announcement.
+  </p>
+</section>
+
+<section class="notice">
+  <h3>Information Notice</h3>
+  <p>
+    This is an independently prepared public-information website.
+    It does not claim to be the official website of Yahaya Bello
+    or an authorized campaign organization. Confirmed official
+    information and authorized branding may be added when available.
+  </p>
+</section>
+
+<div style="text-align:center; margin-top:25px;">
+  <a class="button" href="index.html">Back to Home</a>
+  <a class="button" href="agenda.html">Public Service</a>
+  <a class="button" href="gallery.html">View Gallery</a>
+</div>
+
+  </main>  <footer>
+    <p><strong>Yahaya Bello Public Information Website</strong></p>
+    <p>Leadership • Public Service • Community Development</p>
+    <p>Independently prepared information; not an official website unless authorized.</p>
+    <p>© <span id="year"></span> All rights reserved.</p>
+  </footer>  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script></body>
+</html>
