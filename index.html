@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FYB2SYB public information website featuring news, gallery, videos and community updates.">
-<title>FYB2SYB | Home</title>
+
+<meta name="description" content="GYB2SYB public information website featuring news, photographs, videos and community updates.">
+
+<meta name="theme-color" content="#075b35">
+
+<title>GYB2SYB | Home</title>
 
 <style>
 :root {
@@ -14,6 +18,7 @@
   --light: #f4f7f4;
   --white: #ffffff;
   --text: #26362c;
+  --muted: #68776e;
 }
 
 * {
@@ -50,9 +55,9 @@ header {
 }
 
 .logo {
-  font-size: 27px;
-  font-weight: 900;
   color: white;
+  font-size: 28px;
+  font-weight: 900;
   letter-spacing: 1px;
 }
 
@@ -77,7 +82,6 @@ nav a:hover {
   color: var(--gold);
 }
 
-/* Visible login button */
 .login-button {
   display: inline-flex;
   align-items: center;
@@ -85,7 +89,7 @@ nav a:hover {
   gap: 7px;
   background: var(--gold);
   color: var(--dark);
-  padding: 10px 16px;
+  padding: 10px 15px;
   border-radius: 7px;
   font-weight: 800;
   border: 2px solid var(--gold);
@@ -93,16 +97,17 @@ nav a:hover {
 
 .login-button:hover {
   background: white;
-  border-color: white;
   color: var(--green);
+  border-color: white;
 }
 
+/* Scrolling welcome message */
 .welcome-strip {
   background: var(--dark);
   color: white;
   overflow: hidden;
-  white-space: nowrap;
   padding: 10px 0;
+  white-space: nowrap;
 }
 
 .marquee {
@@ -121,8 +126,9 @@ nav a:hover {
   }
 }
 
+/* Main banner */
 .hero {
-  min-height: 430px;
+  min-height: 440px;
   background: linear-gradient(135deg, #043d25, #087346);
   display: flex;
   align-items: center;
@@ -137,7 +143,7 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: clamp(34px, 6vw, 60px);
+  font-size: clamp(36px, 6vw, 62px);
   line-height: 1.15;
   margin-bottom: 20px;
 }
@@ -194,11 +200,12 @@ nav a:hover {
 
 .section-description {
   text-align: center;
-  color: #68776e;
+  color: var(--muted);
   margin: 0 auto 30px;
   max-width: 700px;
 }
 
+/* Featured cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -236,17 +243,17 @@ nav a:hover {
 }
 
 .card p {
-  color: #68776e;
+  color: var(--muted);
   font-size: 14px;
   margin-bottom: 14px;
 }
 
 .card-link {
-  display: inline-block;
   color: var(--green);
   font-weight: bold;
 }
 
+/* Quick links */
 .quick-access {
   background: white;
   border-top: 1px solid #e1e8e2;
@@ -282,6 +289,7 @@ nav a:hover {
   margin-bottom: 8px;
 }
 
+/* Website notice */
 .disclaimer {
   background: #fff8df;
   border-left: 4px solid var(--gold);
@@ -291,6 +299,7 @@ nav a:hover {
   margin-top: 30px;
 }
 
+/* Footer */
 footer {
   background: var(--dark);
   color: #e3eee7;
@@ -314,6 +323,7 @@ footer a {
   margin: 0 8px;
 }
 
+/* Mobile layout */
 @media (max-width: 850px) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -360,10 +370,6 @@ footer a {
     height: 230px;
   }
 
-  .quick-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .section-title {
     font-size: 25px;
   }
@@ -388,7 +394,9 @@ footer a {
 <header>
   <div class="header-inner">
 
-    <a class="logo" href="index.html">FYB<span>2</span>SYB</a>
+    <a class="logo" href="index.html">
+      GYB<span>2</span>SYB
+    </a>
 
     <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -398,10 +406,9 @@ footer a {
       <a href="agenda.html">Agenda</a>
       <a href="videos.html">Videos</a>
 
-      <!-- Clearly visible member login button -->
       <a class="login-button" href="login.html">
         <span aria-hidden="true">🔐</span>
-        <span>MEMBER LOGIN</span>
+        MEMBER LOGIN
       </a>
     </nav>
 
@@ -410,31 +417,41 @@ footer a {
 
 <div class="welcome-strip">
   <div class="marquee">
-    Welcome to FYB2SYB — Your destination for public information, news, community updates, peace and unity.
+    Welcome to GYB2SYB — Public Information, News, Community Updates, Peace and Unity.
   </div>
 </div>
 
 <section class="hero">
   <div class="hero-content">
-    <h1>Welcome to <span>FYB2SYB</span></h1>
+
+    <h1>Welcome to <span>GYB2SYB</span></h1>
 
     <p>
-      Discover news, public information, photographs, videos and community
-      updates through the FYB2SYB public information website.
+      Explore news, photographs, videos, public information and community
+      updates through the GYB2SYB website.
     </p>
 
     <div class="hero-buttons">
       <a href="news.html" class="button">Read Latest News</a>
-      <a href="about.html" class="button button-outline">Learn About Us</a>
-      <a href="login.html" class="button">🔐 Member Login</a>
+
+      <a href="about.html" class="button button-outline">
+        Learn About Us
+      </a>
+
+      <a href="login.html" class="button">
+        🔐 Member Login
+      </a>
     </div>
+
   </div>
 </section>
 
 <section class="container">
-  <h2 class="section-title">Explore FYB2SYB</h2>
+
+  <h2 class="section-title">Explore GYB2SYB</h2>
+
   <p class="section-description">
-    Browse the different sections of our website and discover available information.
+    Browse our website to explore available news, photographs and information.
   </p>
 
   <div class="cards">
@@ -442,50 +459,75 @@ footer a {
     <article class="card">
       <img
         src="https://i.ibb.co/bgVCDXFr/file-0000000042c88211a1530cf4f8978f5f.png"
-        alt="FYB2SYB featured photograph"
+        alt="GYB2SYB featured photograph"
         loading="lazy"
       >
+
       <div class="card-content">
         <h3>Latest News</h3>
-        <p>Read news articles and public information published on our website.</p>
-        <a href="news.html" class="card-link">Read News →</a>
+
+        <p>
+          Read news articles and public information published on our website.
+        </p>
+
+        <a href="news.html" class="card-link">
+          Read News →
+        </a>
       </div>
     </article>
 
     <article class="card">
       <img
         src="https://i.ibb.co/nqzRwc0P/file-00000000c5bc820ca6f4af80b4227ef4.png"
-        alt="FYB2SYB gallery photograph"
+        alt="GYB2SYB gallery photograph"
         loading="lazy"
       >
+
       <div class="card-content">
         <h3>Photo Gallery</h3>
-        <p>Explore photographs and visual memories available in the gallery.</p>
-        <a href="gallery.html" class="card-link">View Gallery →</a>
+
+        <p>
+          Explore photographs and visual memories available in our gallery.
+        </p>
+
+        <a href="gallery.html" class="card-link">
+          View Gallery →
+        </a>
       </div>
     </article>
 
     <article class="card">
       <img
         src="https://i.ibb.co/VW9LmzHV/file-000000005d408211974cc7466e9aa032.png"
-        alt="FYB2SYB featured image"
+        alt="GYB2SYB featured image"
         loading="lazy"
       >
+
       <div class="card-content">
         <h3>Videos and Updates</h3>
-        <p>Visit the video section and explore other published website updates.</p>
-        <a href="videos.html" class="card-link">Watch Videos →</a>
+
+        <p>
+          Visit our video section and explore available media content.
+        </p>
+
+        <a href="videos.html" class="card-link">
+          Watch Videos →
+        </a>
       </div>
     </article>
 
   </div>
+
 </section>
 
 <section class="quick-access">
+
   <div class="container">
+
     <h2 class="section-title">Quick Access</h2>
+
     <p class="section-description">
-      Choose a section below to continue browsing.
+      Select a section below to continue browsing.
     </p>
 
     <div class="quick-grid">
@@ -514,17 +556,21 @@ footer a {
 
     <div class="disclaimer">
       <strong>Website notice:</strong>
-      This is a public information website. Unless explicitly stated and
-      verified, it should not be considered an official government website.
-      Member login, registration and profile features require a properly
-      configured backend before they can securely authenticate users or
+      This is a public information website. Unless its official status is
+      independently verified, it should not be considered an official
+      government website. Login, registration and profile features require
+      secure backend configuration before they can authenticate users or
       permanently store account information.
     </div>
+
   </div>
+
 </section>
 
 <footer>
-  <p><strong>FYB2SYB</strong> — Public Information Website</p>
+
+  <p><strong>GYB2SYB</strong> — Public Information Website</p>
+
   <p>Peace • Unity • Community Development</p>
 
   <div class="footer-links">
@@ -535,11 +581,15 @@ footer a {
     <a href="login.html">Member Login</a>
   </div>
 
-  <p>&copy; <span id="year"></span> FYB2SYB. All rights reserved.</p>
+  <p>
+    &copy; <span id="year"></span> GYB2SYB. All rights reserved.
+  </p>
+
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
 
 </body>
