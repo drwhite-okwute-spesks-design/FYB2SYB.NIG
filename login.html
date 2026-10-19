@@ -1,0 +1,306 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | FYB2SYB</title><style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f1f6f2;
+  color: #24352c;
+}
+
+header {
+  background: #075c38;
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+  border-bottom: 4px solid #d5a52b;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+header h1 span {
+  color: #f1c64f;
+}
+
+header p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.container {
+  max-width: 450px;
+  margin: 35px auto;
+  padding: 0 15px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 14px;
+  padding: 27px 23px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid #d5a52b;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #075c38;
+  margin: 0 0 8px;
+}
+
+.intro {
+  text-align: center;
+  color: #68776e;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.tab {
+  flex: 1;
+  padding: 11px 5px;
+  border: 1px solid #075c38;
+  border-radius: 6px;
+  background: white;
+  color: #075c38;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #075c38;
+  color: white;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 15px 0 7px;
+}
+
+input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccd7ce;
+  border-radius: 7px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #075c38;
+  box-shadow: 0 0 0 2px rgba(7,92,56,0.1);
+}
+
+.password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 65px;
+}
+
+.show-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #075c38;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button {
+  width: 100%;
+  background: #075c38;
+  color: white;
+  border: none;
+  padding: 14px;
+  margin-top: 23px;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #043d27;
+}
+
+.extra-links {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.extra-links a {
+  color: #075c38;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.message {
+  display: none;
+  background: #fff5d9;
+  border: 1px solid #e5c45e;
+  color: #6b5310;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 15px;
+  color: #68776e;
+  font-size: 12px;
+}
+
+@media(max-width: 400px) {
+  .login-card {
+    padding: 22px 16px;
+  }
+
+  header h1 {
+    font-size: 23px;
+  }
+}
+</style></head><body><header>
+  <h1>FYB2SYB <span>2027</span></h1>
+  <p>Public Information Website</p>
+  <a href="index.html" class="home-link">← Back to Homepage</a>
+</header><main class="container">  <section class="login-card"><h2>Welcome Back</h2>
+<p class="intro">Sign in to your FYB2SYB account.</p>
+
+<div class="tabs">
+  <button type="button" class="tab active" id="memberTab"
+    onclick="selectLogin('member')">
+    Member Login
+  </button>
+
+  <button type="button" class="tab" id="adminTab"
+    onclick="selectLogin('admin')">
+    Admin Login
+  </button>
+</div>
+
+<form id="loginForm">
+
+  <label for="email">Email Address</label>
+  <input
+    type="email"
+    id="email"
+    placeholder="Enter your email address"
+    autocomplete="username"
+    required>
+
+  <label for="password">Password</label>
+
+  <div class="password-wrap">
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter your password"
+      autocomplete="current-password"
+      minlength="6"
+      required>
+
+    <button type="button" class="show-password"
+      onclick="togglePassword()">Show</button>
+  </div>
+
+  <button type="submit" class="submit-button" id="submitButton">
+    Login as Member
+  </button>
+
+  <div class="message" id="message" role="status">
+    This login page is not connected to an authentication service yet.
+    Your account cannot be verified until the backend is configured.
+  </div>
+
+</form>
+
+<div class="extra-links" id="registerLink">
+  Don't have an account?
+  <a href="register.html">Create an account</a>
+</div>
+
+<div class="extra-links">
+  <a href="index.html">Return to Homepage</a>
+</div>
+
+  </section></main><footer>
+  &copy; <span id="year"></span> FYB2SYB. All rights reserved.
+</footer><script>
+let loginType = "member";
+
+function selectLogin(type) {
+  loginType = type;
+
+  document.getElementById("memberTab")
+    .classList.toggle("active", type === "member");
+
+  document.getElementById("adminTab")
+    .classList.toggle("active", type === "admin");
+
+  document.getElementById("submitButton").textContent =
+    type === "admin" ? "Login as Administrator" : "Login as Member";
+
+  document.getElementById("registerLink").style.display =
+    type === "admin" ? "none" : "block";
+
+  document.getElementById("message").style.display = "none";
+}
+
+function togglePassword() {
+  const field = document.getElementById("password");
+  const button = document.querySelector(".show-password");
+
+  if (field.type === "password") {
+    field.type = "text";
+    button.textContent = "Hide";
+  } else {
+    field.type = "password";
+    button.textContent = "Show";
+  }
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const message = document.getElementById("message");
+
+  message.textContent =
+    "The " + (loginType === "admin" ? "administrator" : "member") +
+    " login page is ready for setup. Authentication has not been connected yet, so nobody can sign in through this page yet.";
+
+  message.style.display = "block";
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script></body>
+</html>
