@@ -15,9 +15,7 @@
   --border: #dfe7e1;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -42,20 +40,9 @@ header {
   gap: 12px;
 }
 
-.brand {
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.brand span {
-  color: var(--gold);
-}
-
-.header-subtitle {
-  font-size: 12px;
-  margin-top: 6px;
-  color: #e3eee7;
-}
+.brand { font-size: 22px; font-weight: 800; }
+.brand span { color: var(--gold); }
+.header-subtitle { font-size: 12px; margin-top: 6px; color: #e3eee7; }
 
 .status {
   background: rgba(255,255,255,.12);
@@ -63,7 +50,6 @@ header {
   padding: 9px 12px;
   border-radius: 20px;
   font-size: 12px;
-  white-space: nowrap;
 }
 
 .container {
@@ -72,7 +58,7 @@ header {
   margin: auto;
 }
 
-.welcome {
+.welcome, .section {
   background: white;
   padding: 22px;
   border-radius: 14px;
@@ -81,16 +67,8 @@ header {
   margin-bottom: 22px;
 }
 
-.welcome h1 {
-  margin: 0 0 8px;
-  font-size: 25px;
-}
-
-.welcome p {
-  margin: 0;
-  line-height: 1.6;
-  color: var(--muted);
-}
+.welcome h1 { margin: 0 0 8px; font-size: 25px; }
+.welcome p, .section-intro { line-height: 1.6; color: var(--muted); }
 
 .notice {
   margin-top: 15px;
@@ -117,45 +95,13 @@ header {
   border-radius: 12px;
 }
 
-.stat-card .icon {
-  font-size: 25px;
-}
+.stat-card .icon { font-size: 25px; }
+.stat-card h3 { font-size: 14px; margin: 12px 0 6px; }
+.stat-card strong { font-size: 23px; color: var(--green); }
+.stat-card p { color: var(--muted); font-size: 12px; }
 
-.stat-card h3 {
-  font-size: 14px;
-  margin: 12px 0 6px;
-}
-
-.stat-card strong {
-  font-size: 23px;
-  color: var(--green);
-}
-
-.stat-card p {
-  color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 0;
-}
-
-.section {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 22px;
-}
-
-.section h2 {
-  font-size: 19px;
-  margin: 0 0 8px;
-}
-
-.section-intro {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
+.section h2 { font-size: 19px; margin: 0 0 8px; }
+.section-intro { font-size: 13px; margin-bottom: 20px; }
 
 .form-grid {
   display: grid;
@@ -163,13 +109,8 @@ header {
   gap: 15px;
 }
 
-.field {
-  margin-bottom: 15px;
-}
-
-.field.full {
-  grid-column: 1 / -1;
-}
+.field { margin-bottom: 15px; }
+.field.full { grid-column: 1 / -1; }
 
 label {
   display: block;
@@ -211,26 +152,10 @@ input:focus, textarea:focus, select:focus {
   text-align: center;
 }
 
-.primary {
-  background: var(--green);
-  color: white;
-}
+.primary { background: var(--green); color: white; }
+.secondary { background: #eaf2ec; color: var(--green); }
 
-.secondary {
-  background: #eaf2ec;
-  color: var(--green);
-}
-
-.gold {
-  background: var(--gold);
-  color: #231a04;
-}
-
-.button-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.button-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .actions-grid {
   display: grid;
@@ -245,24 +170,12 @@ input:focus, textarea:focus, select:focus {
   padding: 16px;
   color: var(--text);
   text-decoration: none;
-  background: #fff;
+  background: white;
 }
 
-.action-link strong {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.action-link span {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.action-link:hover {
-  border-color: var(--green);
-  background: #f7fbf8;
-}
+.action-link strong { display: block; margin-bottom: 6px; }
+.action-link span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.action-link:hover { border-color: var(--green); background: #f7fbf8; }
 
 #preview {
   display: none;
@@ -280,9 +193,7 @@ input:focus, textarea:focus, select:focus {
   margin-top: 10px;
 }
 
-#preview h3 {
-  margin-top: 0;
-}
+#preview h3 { margin-top: 0; }
 
 footer {
   text-align: center;
@@ -293,35 +204,14 @@ footer {
   line-height: 1.8;
 }
 
-footer span {
-  color: var(--gold);
-}
+footer span { color: var(--gold); }
 
 @media (max-width: 650px) {
-  .header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid, .actions-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .welcome h1 {
-    font-size: 22px;
-  }
-
-  .section {
-    padding: 16px;
-  }
-
-  .button {
-    width: 100%;
-  }
+  .header-inner { align-items: flex-start; flex-direction: column; }
+  .stats, .form-grid, .actions-grid { grid-template-columns: 1fr; }
+  .welcome h1 { font-size: 22px; }
+  .section { padding: 16px; }
+  .button { width: 100%; }
 }
 </style></head><body><header>
   <div class="header-inner">
@@ -333,35 +223,34 @@ footer span {
   </div>
 </header><main class="container">  <section class="welcome">
     <h1>Welcome to the Admin Dashboard</h1>
-    <p>Manage your website content, prepare news articles, and organize your media from one place.</p><div class="notice">
-  <strong>Important security notice:</strong>
-  This is the dashboard interface only. It is not yet protected by administrator authentication, and articles are not published to your live website. Do not enter passwords or confidential information here.
-</div>
-
+    <p>Manage your website content, prepare news articles, and organize your media from one place.</p>
+    <div class="notice">
+      <strong>Important security notice:</strong>
+      This page is currently a dashboard interface only. It does not have secure administrator authentication, and articles are not published to your live website. Do not enter passwords or confidential information here.
+    </div>
   </section>  <section class="stats">
     <div class="stat-card">
       <div class="icon">📰</div>
       <h3>News Articles</h3>
       <strong>—</strong>
       <p>Connect the database to show articles.</p>
-    </div><div class="stat-card">
-  <div class="icon">🖼️</div>
-  <h3>Gallery Images</h3>
-  <strong>—</strong>
-  <p>Connect image storage to manage pictures.</p>
-</div>
-
-<div class="stat-card">
-  <div class="icon">🔐</div>
-  <h3>Admin Security</h3>
-  <strong>Pending</strong>
-  <p>Secure authentication has not been configured.</p>
-</div>
-
+    </div>
+    <div class="stat-card">
+      <div class="icon">🖼️</div>
+      <h3>Gallery Images</h3>
+      <strong>—</strong>
+      <p>Connect image storage to manage pictures.</p>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🔐</div>
+      <h3>Admin Security</h3>
+      <strong>Pending</strong>
+      <p>Secure authentication has not been configured.</p>
+    </div>
   </section>  <section class="section" id="write-news">
     <h2>✍️ Prepare a News Article</h2>
     <p class="section-intro">
-      Draft your article below and preview it before publishing. This preview is stored only in this page; it does not publish or save the article to your public website.
+      Draft your article below and preview it before publishing. This preview is not saved to your public website.
     </p><form id="newsForm">
   <div class="form-grid">
 
@@ -432,17 +321,14 @@ footer span {
     <strong>🏠 Homepage</strong>
     <span>Open the public website homepage.</span>
   </a>
-
   <a class="action-link" href="news.html">
     <strong>📰 News Page</strong>
     <span>View the public news page.</span>
   </a>
-
   <a class="action-link" href="gallery.html">
     <strong>🖼️ Gallery</strong>
     <span>View the public image gallery.</span>
   </a>
-
   <a class="action-link" href="profile.html">
     <strong>👤 Profile Page</strong>
     <span>View the profile page.</span>
