@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member Dashboard | FYB2SYB</title><style>
+* { box-sizing: border-box; }
+
+:root {
+  --green: #075c38;
+  --dark-green: #043d27;
+  --gold: #d5a52b;
+  --light: #f1f6f2;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: #26372c;
+}
+
+header {
+  background: var(--green);
+  color: white;
+  padding: 18px 16px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.brand {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.brand span { color: #f1c64f; }
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.header-links a {
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 16px;
+}
+
+.welcome {
+  background: linear-gradient(135deg, var(--dark-green), var(--green));
+  color: white;
+  padding: 30px 24px;
+  border-radius: 12px;
+  border-bottom: 4px solid var(--gold);
+}
+
+.welcome h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.welcome p {
+  margin: 0;
+  color: #e5f0e8;
+}
+
+.section-title {
+  color: var(--green);
+  margin: 30px 0 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.card {
+  background: white;
+  padding: 21px;
+  border-radius: 10px;
+  border: 1px solid #e0e7e2;
+  box-shadow: 0 3px 14px rgba(0,0,0,.04);
+}
+
+.card .icon {
+  font-size: 28px;
+}
+
+.card h3 {
+  margin: 10px 0 7px;
+  color: var(--green);
+}
+
+.card p {
+  font-size: 14px;
+  color: #68776e;
+}
+
+.button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover { background: var(--dark-green); }
+
+.button-gold {
+  background: var(--gold);
+  color: #201a09;
+}
+
+.account-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: white;
+  border-left: 4px solid var(--gold);
+  border-radius: 7px;
+}
+
+.account-box p {
+  font-size: 14px;
+  color: #68776e;
+}
+
+.status {
+  display: inline-block;
+  background: #fff4d3;
+  color: #755710;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+footer {
+  text-align: center;
+  background: var(--dark-green);
+  color: white;
+  padding: 22px 15px;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+footer a {
+  color: #f1c64f;
+  text-decoration: none;
+}
+
+@media(max-width: 750px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media(max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+  .welcome h1 { font-size: 24px; }
+  .header-inner { flex-direction: column; align-items: flex-start; }
+}
+</style></head><body><header>
+  <div class="header-inner">
+    <div class="brand">FYB2SYB <span>2027</span></div><nav class="header-links">
+  <a href="index.html">Home</a>
+  <a href="news.html">News</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="login.html">Login</a>
+</nav>
+
+  </div>
+</header><main class="container">  <section class="welcome">
+    <h1>Welcome to Your Member Dashboard</h1>
+    <p>Access website sections and manage your member account from one place.</p>
+    <br>
+    <span class="status">Demo dashboard — login not connected</span>
+  </section>  <h2 class="section-title">Your Member Services</h2>  <section class="grid"><article class="card">
+  <div class="icon">👤</div>
+  <h3>My Profile</h3>
+  <p>Visit the profile page to view the available profile and settings information.</p>
+  <a href="profile.html" class="button">Open Profile</a>
+</article>
+
+<article class="card">
+  <div class="icon">📰</div>
+  <h3>Latest News</h3>
+  <p>Browse articles and public information published on the website.</p>
+  <a href="news.html" class="button">Read News</a>
+</article>
+
+<article class="card">
+  <div class="icon">🖼️</div>
+  <h3>Photo Gallery</h3>
+  <p>View photographs in the website gallery.</p>
+  <a href="gallery.html" class="button">View Photos</a>
+</article>
+
+<article class="card">
+  <div class="icon">🎥</div>
+  <h3>Videos</h3>
+  <p>Explore the available video section.</p>
+  <a href="videos.html" class="button">Watch Videos</a>
+</article>
+
+<article class="card">
+  <div class="icon">📌</div>
+  <h3>Public Service</h3>
+  <p>Explore public service topics and community information.</p>
+  <a href="agenda.html" class="button">Explore</a>
+</article>
+
+<article class="card">
+  <div class="icon">✉️</div>
+  <h3>Contact</h3>
+  <p>Visit the contact page to find available ways to send an enquiry.</p>
+  <a href="contact.html" class="button">Contact Us</a>
+</article>
+
+  </section>  <section class="account-box">
+    <h2 class="section-title" style="margin-top:0">Account Information</h2>
+    <p><strong>Account type:</strong> Member dashboard preview</p>
+    <p><strong>Account status:</strong> <span class="status">Authentication pending</span></p>
+    <p>
+      Your account details will appear here after Supabase Authentication is connected.
+      This demonstration page does not verify whether a visitor is logged in.
+    </p>
+    <a href="login.html" class="button">Go to Login</a>
+    <a href="register.html" class="button button-gold">Register</a>
+  </section>  <p style="font-size:12px;color:#68776e;margin-top:22px">
+    Security notice: this is a public demonstration page. Do not enter or display
+    confidential information here until account authentication and access controls
+    are implemented.
+  </p></main><footer>
+  <p>© <span id="year"></span> FYB2SYB. All rights reserved.</p>
+  <a href="index.html">Return to Homepage</a>
+</footer><script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script></body>
+</html>
